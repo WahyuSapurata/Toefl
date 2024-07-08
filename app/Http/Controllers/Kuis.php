@@ -20,7 +20,7 @@ class Kuis extends BaseController
         });
         $combined = $data->map(function ($item) {
             // Mengambil semua kuis yang terkait dengan pengguna saat ini
-            $kuis = ModelsKuis::where('uuid_kategori', $item->uuid)->get();
+            $kuis = ModelsKuis::where('uuid_kategori', $item->uuid)->where('uuid_user', auth()->user()->uuid)->get();
 
             // Menghitung total poin
             $total = $kuis->sum('poin');

@@ -16,7 +16,7 @@
                                             <th>No</th>
                                             <th>Nama</th>
                                             <th>Email</th>
-                                            <th>Nilai Per Poin</th>
+                                            <th>Nilai Per Kategori</th>
                                             <th>Jumlah Point</th>
                                             {{-- <th>Aksi</th> --}}
                                         </tr>

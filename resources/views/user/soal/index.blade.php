@@ -40,12 +40,20 @@
                         </div>
                     @else
                         <div class="d-flex gap-5 justify-content-center">
+                            @php
+                                $tolaSemuaKategori = 0;
+                                foreach ($combined as $data_kategori) {
+                                    $tolaSemuaKategori += $data_kategori->total_poin;
+                                }
+                            @endphp
                             @foreach ($combined as $item_kategori)
                                 <div class="card">
                                     {{ $item_kategori->kategori }} <div class="fw-bolder text-center">
                                         Point {{ $item_kategori->total_poin }}</div>
                                 </div>
                             @endforeach
+                        </div>
+                        <div class="fs-5 fw-bolder text-center mt-5">Total Keseluruhan Point : {{ $tolaSemuaKategori }}
                         </div>
                         <!--begin::Alert-->
                         <div class="alert alert-success d-flex align-items-center p-5 mt-5">
